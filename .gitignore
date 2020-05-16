@@ -1,0 +1,4 @@
+*.suo
+/.vs/Three/DesignTimeBuild/.dtbcache.v2
+/MediatR/obj/Debug/netcoreapp3.1/MediatR.AssemblyInfo.cs
+/MediatR/obj/Debug/netcoreapp3.1/MediatR.AssemblyInfoInputs.cache
