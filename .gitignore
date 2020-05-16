@@ -2,3 +2,14 @@
 /.vs/Three/DesignTimeBuild/.dtbcache.v2
 /MediatR/obj/Debug/netcoreapp3.1/MediatR.AssemblyInfo.cs
 /MediatR/obj/Debug/netcoreapp3.1/MediatR.AssemblyInfoInputs.cache
+/.vs/NetCore/DesignTimeBuild/.dtbcache.v2
+/Three/obj/Debug/netcoreapp3.1/Three.AssemblyInfo.cs
+/Three/obj/Debug/netcoreapp3.1/Three.AssemblyInfoInputs.cache
+/Three/obj/Debug/netcoreapp3.1/Three.assets.cache
+/Three/obj/Three.csproj.nuget.dgspec.json
+/Three/obj/Three.csproj.nuget.g.props
+/Three/obj/Three.csproj.nuget.g.targets
+/Three/obj/project.assets.json
+/Three/obj/project.nuget.cache
+/Three/wwwroot/css/all.min.css
+/Three/wwwroot/css/bootstrap.css
