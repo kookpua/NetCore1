@@ -1,1 +1,1 @@
-ทรฮส:https://localhost:5001/img/th.jpg
+??:https://localhost:5001/img/th.jpg
