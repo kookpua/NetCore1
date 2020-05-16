@@ -18,7 +18,11 @@ namespace MediatRDemo
 
             var mediator = serviceProvider.GetService<IMediator>();
 
-            await mediator.Send(new MyCommand { CommandName = "cmd01" });
+            // v1 v2都会执行
+            await mediator.Publish(new MyEvent { EventName="event01"});
+
+            //只执行最前边的方法
+            //await mediator.Send(new MyCommand { CommandName = "cmd01" });
 
             Console.WriteLine("Hello World!");
         }
@@ -49,5 +53,33 @@ namespace MediatRDemo
           
         }
        
+
+
+        internal class MyEvent : INotification
+        {
+            public string EventName { get; set; }
+        }
+
+
+        internal class MyEventHandler : INotificationHandler<MyEvent>
+        {
+            public Task Handle(MyEvent notification, CancellationToken cancellationToken)
+            {
+                Console.WriteLine($"MyEventG=Handler执行:{notification.EventName}");
+                return Task.CompletedTask;
+                throw new NotImplementedException();
+            }
+        }
+
+        internal class MyEventHandlerV2 : INotificationHandler<MyEvent>
+        {
+            public Task Handle(MyEvent notification, CancellationToken cancellationToken)
+            {
+                Console.WriteLine($"MyEventG=HandlerV2执行:{notification.EventName}");
+                return Task.CompletedTask;
+                throw new NotImplementedException();
+            }
+        }
+
     }
 }
