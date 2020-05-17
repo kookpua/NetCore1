@@ -18,6 +18,12 @@ namespace Three
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+            //如果加上这个  其他json 源都失效了 只有nick.json起作用
+            //.ConfigureAppConfiguration((context, configBuilder) =>
+            //{
+            //    configBuilder.Sources.Clear();
+            //    configBuilder.AddJsonFile("nick.json");
+            //})
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
