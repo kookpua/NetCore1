@@ -18,9 +18,23 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="col-md-4">
+        <a asp-page="Department/AddDepartment">Add</a>
+    </div>
+</div>
+
+
+@await Component.InvokeAsync("CompanySummary", new { title = "部门列表页的汇总" })
+<vc:company-summary title="部门列表页的汇总2"></vc:company-summary>
+
+
+
+
 @functions{
 
-    public IEnumerable<Department> Departments { get; set; }
+
+    public IEnumerable<Three.Models.Department> Departments { get; set; }
 
     public async Task OnGetAsync()
     {

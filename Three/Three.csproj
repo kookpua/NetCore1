@@ -24,4 +24,8 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\新文件夹\" />
+  </ItemGroup>
+
 </Project>
