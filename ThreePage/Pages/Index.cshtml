@@ -1,0 +1,32 @@
+﻿@page
+@using Three.Models;
+@using Three.Services;
+
+@inject IDepartmentService departmentService
+
+<div class="row">
+    <div class="col-md-10 offset-md-2">
+        <table class="table">
+            <tr>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Employee Count</th>
+                <th>Action</th>
+            </tr>
+            @Html.DisplayFor(x => x.Departments)
+        </table>
+    </div>
+</div>
+
+@functions{
+
+    public IEnumerable<Department> Departments { get; set; }
+
+    public async Task OnGetAsync()
+    {
+        Departments = await departmentService.GetAll();
+    }
+
+
+
+}
