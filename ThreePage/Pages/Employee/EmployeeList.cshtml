@@ -22,22 +22,22 @@
 
 
 @functions{
-
     public class EmployeeListModel : PageModel
     {
-        private readonly IEmployeeService _employeeService;
+
+        public readonly IEmployeeService _employeeService;
+
+        public IEnumerable<Employee> Employees { get; set; }
 
         public EmployeeListModel(IEmployeeService employeeService)
         {
             _employeeService = employeeService;
         }
 
-        public IEnumerable<Employee> Employees { get; set; }
-
         public async Task OnGet(int departmentId)
         {
             Employees = await _employeeService.GetByDepartmentId(departmentId);
-            ViewData["Department"] = departmentId;
+            ViewData["DepartmentID"] = departmentId;
         }
 
         public async Task<IActionResult> OnGetFireAsync(int employeeId, int departmentId)
@@ -45,6 +45,5 @@
             await _employeeService.Fire(employeeId);
             return RedirectToPage("EmployeeList", new { departmentId });
         }
-
     }
 }
